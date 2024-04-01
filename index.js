@@ -102,9 +102,11 @@ function calculateTotalMonths(data)
   return data.length;
 }
 
+
+
 // Print total number of months
 const totalMonths = calculateTotalMonths(finances);
-console.log(`Total Months: ${totalMonths}`);
+console.log("Total Months: " + totalMonths);
 
 
 
@@ -119,9 +121,11 @@ function calculateNetTotal(data)
   return total;
 }
 
+
+
 // Print net total amount of Profit and Losses
 const netTotal = calculateNetTotal(finances);
-console.log(`Total: $${netTotal}`);
+console.log("Total: " + netTotal);
 
 
 
@@ -139,30 +143,73 @@ function calculateAverageChange(data)
   return totalChange / (data.length - 1);
 }
 
+
+
 // Print average change in Profit and Losses
 const averageChange = calculateAverageChange(finances);
-console.log(`Average Change: $${averageChange.toFixed(2)}`);
+console.log("Average Change: " + averageChange.toFixed(2));
 
 
 
 
+// Function to find the greatest increase in Profit and Losses
+
+let greatestIncreaseAmount = 0;
+let greatestIncreaseDate;
+
+function findGreatestIncrease(data)
+{
+  let monthlyChange;
+  greatestIncreaseAmount = 0;
+  greatestIncreaseDate;
+
+  for (let i = 1; i < data.length; i++)
+  {
+    monthlyChange = data[i][1] - data[i - 1][1]; //difference between values in current month and previous month
+
+    if(monthlyChange > greatestIncreaseAmount)
+    {
+      greatestIncreaseDate = data[i][0];
+      greatestIncreaseAmount = monthlyChange;
+    }
+  }
+  return greatestIncreaseDate, greatestIncreaseAmount;
+}
 
 
 
-
-
-
-
-
-
-// Calculate and print greatest increase in Profit/Losses
+// Print greatest increase in Profit and Losses
 const greatestIncrease = findGreatestIncrease(finances);
-console.log(
-  `Greatest Increase in Profits/Losses: ${greatestIncrease.date} ($${greatestIncrease.amount})`
-);
+console.log("Greatest Increase in Profits/Losses: " + greatestIncreaseDate + " ($" + greatestIncreaseAmount + ")");
 
-// Calculate and print greatest decrease in Profit/Losses
+
+
+// Function to find the greatest decrease in Profit and Losses
+
+let greatestDecreaseAmount = 0;
+let greatestDecreaseDate;
+
+function findGreatestDecrease(data)
+{
+  let monthlyChange;
+  greatestDecreaseAmount = 0;
+  greatestDecreaseDate;
+
+  for (let i = 1; i < data.length; i++)
+  {
+    monthlyChange = data[i][1] - data[i - 1][1]; //difference between values in current month and previous month
+
+    if(greatestDecreaseAmount > monthlyChange)
+    {
+      greatestDecreaseDate = data[i][0];
+      greatestDecreaseAmount = monthlyChange;
+    }
+  }
+  return greatestDecreaseDate, greatestDecreaseAmount;
+}
+
+
+
+// Calculate and print greatest decrease in Profit and Losses
 const greatestDecrease = findGreatestDecrease(finances);
-console.log(
-  `Greatest Decrease in Profits/Losses: ${greatestDecrease.date} ($${greatestDecrease.amount})`
-);
+console.log("Greatest Decrease in Profits/Losses: " + greatestDecreaseDate + " ($" + greatestDecreaseAmount + ")");
