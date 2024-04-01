@@ -96,6 +96,8 @@ var finances = [
 function printFinancialAnalysis(finances) {
   console.log("Financial Analysis");
   console.log("------------------");
+  console.log(`Total Months: ${finances.totalMonths}`);
+  
 }
 
 
