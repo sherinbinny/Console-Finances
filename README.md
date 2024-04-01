@@ -4,8 +4,7 @@
 
 ### Screenshot
 
-<img width="1672" alt="Screenshot 2024-04-01 at 16 44 49" src="https://github.com/sherinbinny/Console-Finances/assets/101629905/38f8b69a-ad25-435a-8fc4-34f9ebbabd2e">
-
+<img width="1670" alt="Screenshot 2024-04-01 at 16 55 12" src="https://github.com/sherinbinny/Console-Finances/assets/101629905/fab248b0-3f66-4c91-aeca-bda2d0996a82">
 
 
 ### Links
