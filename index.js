@@ -167,6 +167,7 @@ function findGreatestIncrease(data)
   {
     monthlyChange = data[i][1] - data[i - 1][1]; //difference between values in current month and previous month
 
+    //Check if current monthly charge is greater than previous greatest increases. If yes, update the greatest increase variable
     if(monthlyChange > greatestIncreaseAmount)
     {
       greatestIncreaseDate = data[i][0];
@@ -199,6 +200,7 @@ function findGreatestDecrease(data)
   {
     monthlyChange = data[i][1] - data[i - 1][1]; //difference between values in current month and previous month
 
+    //Check if current monthly charge is lesser than previous greatest decreases. If yes, update the greatest decrease variable
     if(greatestDecreaseAmount > monthlyChange)
     {
       greatestDecreaseDate = data[i][0];
@@ -210,6 +212,6 @@ function findGreatestDecrease(data)
 
 
 
-// Calculate and print greatest decrease in Profit and Losses
+// Print greatest decrease in Profit and Losses
 const greatestDecrease = findGreatestDecrease(finances);
 console.log("Greatest Decrease in Profits/Losses: " + greatestDecreaseDate + " ($" + greatestDecreaseAmount + ")");
