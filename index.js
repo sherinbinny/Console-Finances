@@ -125,17 +125,35 @@ console.log(`Total: $${netTotal}`);
 
 
 
+// Function to calculate average change in Profit and Losses
+function calculateAverageChange(data)
+{
+  let totalChange = 0;
+  let monthlyChange;
 
+  for (let i = 1; i < data.length; i++)
+  {
+    monthlyChange = data[i][1] - data[i - 1][1]; //difference between values in current month and previous month
+    totalChange += monthlyChange;
+  }
+  return totalChange / (data.length - 1);
+}
 
-
-
-
-
-
-
-// Calculate and print average change in Profit/Losses
+// Print average change in Profit and Losses
 const averageChange = calculateAverageChange(finances);
 console.log(`Average Change: $${averageChange.toFixed(2)}`);
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Calculate and print greatest increase in Profit/Losses
 const greatestIncrease = findGreatestIncrease(finances);
