@@ -86,3 +86,18 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+
+
+
+
+
+// Function to print financial analysis to console
+function printFinancialAnalysis(finances) {
+  console.log("Financial Analysis");
+  console.log("------------------");
+}
+
+
+// Print financial analysis to console
+printFinancialAnalysis(finances);
