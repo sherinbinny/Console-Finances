@@ -1,3 +1,4 @@
+// Dataset
 var finances = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
@@ -89,17 +90,61 @@ var finances = [
 
 
 
+// Print financial analysis as heading
+console.log("Financial Analysis");
+console.log("------------------");
 
 
 
-// Function to print financial analysis to console
-function printFinancialAnalysis(finances) {
-  console.log("Financial Analysis");
-  console.log("------------------");
-  console.log(`Total Months: ${finances.totalMonths}`);
-  
+// Function to calculate total number of months
+function calculateTotalMonths(data)
+{
+  return data.length;
 }
 
+// Print total number of months
+const totalMonths = calculateTotalMonths(finances);
+console.log(`Total Months: ${totalMonths}`);
 
-// Print financial analysis to console
-printFinancialAnalysis(finances);
+
+
+// Function to calculate total amount of Profit and Losses
+function calculateNetTotal(data)
+{
+  let total = 0;
+  for(var i=0; i < data.length; i++)
+  {
+    total += data[i][1];
+  }
+  return total;
+}
+
+// Print net total amount of Profit and Losses
+const netTotal = calculateNetTotal(finances);
+console.log(`Total: $${netTotal}`);
+
+
+
+
+
+
+
+
+
+
+
+// Calculate and print average change in Profit/Losses
+const averageChange = calculateAverageChange(finances);
+console.log(`Average Change: $${averageChange.toFixed(2)}`);
+
+// Calculate and print greatest increase in Profit/Losses
+const greatestIncrease = findGreatestIncrease(finances);
+console.log(
+  `Greatest Increase in Profits/Losses: ${greatestIncrease.date} ($${greatestIncrease.amount})`
+);
+
+// Calculate and print greatest decrease in Profit/Losses
+const greatestDecrease = findGreatestDecrease(finances);
+console.log(
+  `Greatest Decrease in Profits/Losses: ${greatestDecrease.date} ($${greatestDecrease.amount})`
+);
